@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title":"Wayne vinil"
+})
+<body>
+    <div class="wrapper">
+        <h1 class="visually-hidden">Wayne Vinil</h1>
+        @@include('html/header.html', {})
+        <main class="main">
+            <div class="main__container container">
+                <section class="main__sound-list sound-list">
+                    <div class="sound-list__container container">
+                        <ul class="sound-list__list">
+                            <li class="sound-list__item">Sound-list:</li>
+                            <li class="sound-list__item">1 - Hip-Hop and Jazz (NBeatMusic)</li>
+                            <li class="sound-list__item">2 - Awakening (ItsWatR)</li>
+                            <li class="sound-list__item">3 - Session joda mtr (Dutchnelsar)</li>
+                            <li class="sound-list__item">4 - All I need (Crystal)</li>
+                            <li class="sound-list__item">5 - Day dreaming (AAP)</li>
+                            <li class="sound-list__item">6 - Gone get it (AAP)</li>
+                            <li class="sound-list__item">7 - Wataboi wake up (ItsWatR)</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="main__note note">
+                    <div class="note__container container">
+                        <img src="img/note-1.svg" alt="Listen to music" class="note__img">
+                        <img src="img/note-2.svg" alt="Listen to music" class="note__img">
+                        <img src="img/note-3.svg" alt="Listen to music" class="note__img">
+                        <img src="img/note-4.svg" alt="Listen to music" class="note__img">
+                        <img src="img/note-5.svg" alt="Listen to music" class="note__img">
+                    </div>
+                </section>
+                <section class="main__vinil-record-player vinil-record-player">
+                    <div class="vinil-record-player__corpus corpus">
+                        <div class="corpus__top-side">
+                            <span></span>
+                        </div>
+                        <div class="corpus__right-side">
+                            <span></span>
+                        </div>
+                        <div class="corpus__front-side front-side">
+                            <div class="front-side__speakers speakers-left">
+                                <span></span>
+                            </div>
+                            <div class="front-side__nav nav">
+                                <div class="nav__button-block button-block">
+                                    <button class="button button-play" type="button"></button>
+                                    <button class="button button-stop" type="button"></button>
+                                </div>
+                                <div class="nav__logo">
+                                    <h2 class="logo">Wayne Vinil</h2>
+                                </div>
+                            </div>
+                            <div class="front-side__speakers speakers-right">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vinil-record-player__record record">
+                        <div class="record__body record-rotate">
+                            <div class="record__profile profile">
+                                <div class="profile__stripes profile__stripes-top"></div>
+                                <div class="profile__stripes profile__stripes-bottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vinil-record-player__pickup pickup">
+                        <div class="pickup__toggle"></div>
+                        <div class="pickup__stylus">
+                            <div class="pickup__tip"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        @@include('html/footer.html', {})
+    </div>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

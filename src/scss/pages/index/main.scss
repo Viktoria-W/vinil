@@ -1,0 +1,24 @@
+.main {
+    background: #ee9a2ce8 url("../img/bgr.jpg") center / cover no-repeat;
+		&__container {
+		}
+		
+		&__note {
+		}
+
+		&__vinil-record-player {
+            margin: 10% 25%;
+			padding-bottom: 140px;
+		}
+        
+        &__sound-list {
+		}
+}
+
+@media (max-width: $tablet) {
+	.main {
+		&__vinil-record-player {
+			margin: 10% 15%;
+		}
+	}
+}

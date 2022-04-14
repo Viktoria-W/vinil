@@ -1,0 +1,560 @@
+/*-----------------Корпус--------------------------------------------*/
+.vinil-record-player {
+
+    &__corpus {
+    }
+
+    &__record {
+        position: relative;
+    }
+
+    &__pickup {
+    }
+}
+
+.corpus {
+position: relative;
+    &__top-side {
+        & span {
+            display: block;
+            width: 601px;
+            height: 100px;
+            background-color:  #212121;
+            transform: skewX(290deg);
+        }
+    }
+
+    &__right-side {
+        position: relative;
+
+        & span {
+            display: block;
+            width: 273px;
+            height: 130px;
+            background: #4D220E url("../img/wood.svg") center / cover no-repeat;
+            transform: skewY(340deg);
+            position: absolute;
+            top: -50px;
+            left: 464px;
+        }
+        
+    }
+
+    &__front-side {
+            width: 600px;
+            height: 130px;
+            background: #4D220E url("../img/wood.svg") center / cover no-repeat;
+            position: absolute;
+            top: 100px;
+            left: -135px;
+            z-index: 1;
+    }
+}
+
+.front-side {
+
+    &__speakers {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 90px;
+        background-color: #000;
+        border-radius: 10px;
+        z-index: 2;
+
+        &::after, &::before {
+            content: '';
+            top: 15px;
+            left: 0;
+            background-color: #000;
+            width: 20px;
+            height: 60px;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        &::after {
+            left: 25px;
+        }
+
+        &::before {
+            left: -25px;
+        }
+
+        & span::after, span::before {
+            content: '';
+            top: 30px;
+            left: 0;
+            background-color: #000;
+            width: 20px;
+            height: 40px;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        & span::after {
+            left: 50px;
+        }
+
+        & span::before {
+            left: -50px;
+        }
+        
+    }
+
+    &__nav {
+        position: relative;
+    }
+}
+
+.speakers-left {
+top: 20px;
+left: 75px;
+}
+
+.speakers-right {
+top: 20px;
+left: 500px;
+}
+
+.nav {
+
+    &__button-block {
+        width: 200px;
+        height: 50px;
+        background-color: #000;
+        position: absolute;
+        top: 70px;
+        left: 190px;
+        border-radius: 5px;
+    }
+
+    &__logo {
+        display: block;
+        width: 250px;
+        height: 30px;
+        background-color: #000;
+        position: absolute;
+        top: 20px;
+        left: 170px;
+        border-radius: 50%;
+    }
+}
+
+.button-block {
+}
+
+.button {
+    position: absolute;
+    content: '';
+    top: 5px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #79553D;
+    border-radius: 50%;
+
+    &:hover {
+        background-color: #BC987E;
+    }
+
+    &:focus {
+        border: 1px solid #fff;
+    }
+
+    &:active {
+        background-color: #000;
+    }
+}
+
+.button-play {
+    left: 40px;
+
+    &::before {
+        content: '';
+        top: 10px;
+        left: 12px;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-left: 20px solid #000;
+        border-bottom: 10px solid transparent;
+    }
+
+    &:hover::before {
+        border-top: 10px solid transparent;
+        border-left: 20px solid #E5E5E5;
+        border-bottom: 10px solid transparent;
+    }
+}
+
+.button-stop {
+    left: 120px;
+
+    &::before {
+        content: '';
+        top: 10px;
+        left: 10px;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #000;
+    }
+
+    &:hover::before {
+        background-color: #E5E5E5;
+    }
+}
+
+.logo {
+    color: #fff;
+    text-align: center;
+    padding: 7px 5px;
+    transform: rotateY(20deg);
+    font-family: "SyneMono", "PT Mono", monospace;
+    font-size: 16px;
+}
+
+/*-------------------Пластинка------------------------------------------*/
+.record {
+
+    &__body {
+        content: '';
+        top: -300px;
+        left: -90px;
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background-color: #000;
+        border-radius: 50%;
+        z-index: 5;
+    }
+
+    &__profile {
+        content: '';
+        top: 225px;
+        left: 225px;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0px 0px 0px 60px rgba(165, 165, 165, 0.2);
+    }
+}
+
+.profile {
+
+    &__stripes {
+        content: '';
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 15px solid #C7D0CC;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        transform: rotate(15deg);
+
+        &::after {
+        content: '';
+        top: -90px;
+        left: -60px;
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        border: 15px solid #C7D0CC;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        transform: rotate(0deg);
+        }
+    }
+
+    &__stripes-top {
+        top: -110px;
+        left: 0;
+    }
+
+    &__stripes-bottom {
+        top: 60px;
+        left: -35px;
+        border-top-color: transparent;
+        border-bottom-color: #C7D0CC;
+
+        &::after {
+            top: 55px;
+            left: -40px;
+            border-top-color: transparent;
+            border-bottom-color: #C7D0CC;
+        }
+    }
+}
+//анимация прокрутки пластинки
+@keyframes recordRotate {
+    0% {
+        transform: skewY(355deg) rotateX(104deg) rotate(360deg);
+    }
+    100% {
+        transform: skewY(355deg) rotateX(104deg) rotate(0deg);
+    }
+}
+.record-rotate {
+    transform: skewY(355deg) rotateX(104deg);
+}
+.record-play {
+    animation: recordRotate 5s infinite linear;
+}
+/*-----------------Тонарм(держатель иглы)--------------------------------------------*/
+.pickup {
+position: relative;
+    &__toggle {
+        content: '';
+        top: -100px;
+        left: 550px;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #79553D;
+        z-index: 5;
+        transform: skewY(355deg) rotateX(104deg);
+        box-shadow: 0px 0px 0px 30px #000;
+    }
+
+    &__stylus {
+        content: '';
+        top: -200px;
+        left: 130px;
+        position: absolute;
+        width: 350px;
+        height: 200px;
+        border: 20px solid  #49423D;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        border-radius: 50%;
+        transform: rotate(350deg) skewX(66deg);
+        z-index: 5;
+    }
+
+    &__tip {
+        content: '';
+        top: 120px;
+        left: 20px;
+        position: absolute;
+        width: 20px;
+        height: 35px;
+        background-color: #A5A5A5;
+        border-radius: 10%;
+        transform: rotate(70deg) skewY(131deg);
+    }
+}
+
+/*-----------------Медиа-запросы(стороны проигрователя)--------------------------------------------*/
+@media (max-width: $mobile-l) {
+    .corpus {
+        &__top-side {
+            & span {
+                width: 401px;
+            }
+        }
+
+        &__right-side {
+
+            & span {
+                width: 180px;
+                top: -32px;
+                left: 260px;
+            }
+        }
+
+        &__front-side {
+            width: 400px;
+        }
+    }
+
+    .front-side {
+        &__speakers {
+            width: 15px;
+            height: 60px;
+
+            &::after, &::before {
+                width: 15px;
+                height: 40px;
+            }
+        }
+
+        & span::after, span::before {
+            display: none;
+        }
+    }
+
+    .nav {
+        &__button-block {
+            width: 150px;
+            left: 130px;
+        }
+
+        &__logo {
+            width: 150px;
+            left: 130px;
+        }
+    }
+
+    .button-play {
+        left: 20px;
+    }
+
+    .button-stop {
+        left: 85px;
+    }
+
+    .speakers-left {
+        top: 35px;
+    }
+
+    .speakers-right {
+        top: 35px;
+        left: 330px;
+    }
+}
+
+@media (max-width: $mobile-m) {
+    .corpus {
+        &__top-side {
+            & span {
+                width: 331px;
+            }
+        }
+
+        &__right-side {
+
+            & span {
+                width: 150px;
+                top: -28px;
+                left: 195px;
+            }
+        }
+
+        &__front-side {
+            width: 330px;
+        }
+    }
+
+    .front-side {
+        &__speakers {
+            width: 10px;
+
+            &::after, &::before {
+                width: 10px;
+            }
+
+            &::after {
+                left: 15px;
+            }
+    
+            &::before {
+                left: -15px;
+            }
+        }
+    }
+
+    .nav {
+        &__button-block {
+            width: 120px;
+        }
+
+        &__logo {
+            left: 115px;
+        }
+    }
+
+    .button-play {
+        left: 15px;
+    }
+
+    .button-stop {
+        left: 65px;
+    }
+
+    .speakers-right {
+        left: 285px;
+    }
+}
+/*-----------------Медиа-запросы(Пластинка)--------------------------------------------*/
+@media (max-width: $mobile-l) {
+    .record {
+        &__body {
+            top: -245px;
+            left: -85px;
+            width: 380px;
+            height: 380px;
+        }
+
+        &__profile {
+            width: 30px;
+            height: 30px;
+            top: 165px;
+            left: 190px;
+            box-shadow: 0px 0px 0px 30px rgba(165, 165, 165, 0.2);
+        }
+    }
+
+    .profile {
+        &__stripes {
+            width: 70px;
+            height: 70px;
+
+            &::after {
+            }
+        }
+
+        &__stripes-top {
+            top: -70px;
+            left: -15px;
+
+            &::after {
+                top: -70px;
+            }
+        }
+
+        &__stripes-bottom {
+            top: 0px;
+            left: -30px;
+
+            &::after {
+                top: 5px;
+            }
+        }
+    }
+}
+/*-----------------Медиа-запросы(Держатель иглы)--------------------------------------------*/
+@media (max-width: $mobile-l) {
+    .pickup {
+        &__toggle {
+            top: -110px;
+            left: 335px;
+        }
+
+        &__stylus {
+            top: -215px;
+            left: 0px;
+            width: 235px;
+            
+        }
+
+        &__tip {
+            top: 130px;
+            left: 15px;
+            width: 15px;
+            height: 25px;
+        }
+    }
+}
