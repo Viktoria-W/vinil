@@ -4,7 +4,6 @@ import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebp();
 
 
-
 //Анимация пластинки и нот
 
 const recordBody = document.querySelector('.record__body');
@@ -43,12 +42,16 @@ function play () {
     if (recordBody.classList.contains('record-rotate')) {
         recordBody.classList.remove('record-rotate');
         recordBody.classList.add('record-play');
-    }
+    };
 //анимация нот
     for (let i = 0; i < note.length; i++) {
         note[i].classList.add('dance-scale');
-    }
-}
+    };
+
+    setTimeout( function() {
+        stop();
+    }, 53250 * 20);//останавливаем анимацию при остановке песен
+};
 
 //Воспроизведение песен по очереди из массива
 function playSound() {
@@ -61,12 +64,18 @@ function playSound() {
         player.src = audioArray[current];
         player.play();
     };
-}
 
+    setTimeout( function() {
+        stopSound();
+    }, 53250 * 20);//остановка песен после 17 минут 45 секунд
+};
+
+
+//функция остановки песен
 function stopSound() {
     let player = document.getElementById('player');
     player.pause();
-}
+};
 
 //функция стоп анимации
 function stop () {
