@@ -32,6 +32,10 @@
       }
 }
 
+.item-selected {
+      color: red;
+}
+
 @media (max-width: $mobile-l) {
       .sound-list {
             &__list {

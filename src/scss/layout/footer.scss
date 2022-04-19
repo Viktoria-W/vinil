@@ -1,0 +1,24 @@
+.footer {
+background-color:   rgb(58, 58, 58);
+    &__container {
+        min-height: 80px;
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        color: #fff;
+        opacity: .5;
+    }
+
+    &__link {
+    }
+
+    &__img {
+        display: block;
+        margin: 20px;
+    }
+}
