@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.min.css">
     <title>Wayne vinil</title>
 </head>
+
 <body>
     <div class="wrapper">
         <h1 class="visually-hidden">Wayne Vinil</h1>
@@ -17,10 +18,29 @@
 
         <main class="main">
             <div class="main__container container">
+                <section class="main__album album">
+                    <div class="album__container container">
+                        <h2 class="album__title title">Albums :</h2>
+                        <div class="album__wrapper">
+                            <div class="album__hiphop hiphop">
+                                <div class="hiphop__block-img">
+                                    <img src="img/hip-hop.jpg" alt="Hip-hop album" class="hiphop__img album__img">
+                                    <img src="img/vinil.svg" alt="Record" class="hiphop__record album__record">
+                                </div>
+                            </div>
+                            <div class="album__pop pop">
+                                <div class="pop__block-img">
+                                    <img src="img/pop.jpg" alt="Pop album" class="pop__img album__img">
+                                    <img src="img/vinil.svg" alt="Record" class="pop__record album__record">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section class="main__sound-list sound-list">
                     <div class="sound-list__container container">
                         <ul class="sound-list__list">
-                            <li class="sound-list__item">Sound-list:</li>
+                            <li class="sound-list__item title">Sound-list:</li>
                             <li class="sound-list__item">1 - Hip-Hop and Jazz (NBeatMusic)</li>
                             <li class="sound-list__item">2 - Awakening (ItsWatR)</li>
                             <li class="sound-list__item">3 - Session joda mtr (Dutchnelsar)</li>
@@ -95,4 +115,5 @@
     </div>
     <script src="js/app.min.js"></script>
 </body>
+
 </html>
