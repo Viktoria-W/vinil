@@ -20,5 +20,10 @@ background-color:   rgb(58, 58, 58);
     &__img {
         display: block;
         margin: 20px;
+
+        &:hover {
+            background-color: #fff;
+            border-radius: 60px;
+        }
     }
 }

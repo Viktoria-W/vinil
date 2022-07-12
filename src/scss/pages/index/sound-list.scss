@@ -22,13 +22,9 @@
       padding-bottom: 15px;
       text-decoration: underline;
 
-      &:first-child {
-      text-transform: uppercase;
-      text-decoration: none;
-      text-align: center;
-      font-weight: bold;
-      font-size: 18px;
-      }
+            &:first-child {
+            text-decoration: none;
+            }
       }
 }
 
@@ -38,6 +34,9 @@
 
 @media (max-width: $mobile-l) {
       .sound-list {
+            &__container {
+                  padding: 0px 20%;
+            }
             &__list {
                   max-width: 200px;
             }

@@ -3,6 +3,12 @@ import * as flsFunctions from "./modules/functions.js";
 //функция проверки на Webp
 flsFunctions.isWebp();
 
+//класс для создания списка песен
+import SoundList from "./modules/sound-list.js";
+
+
+
+
 
 //Анимация пластинки и нот
 
@@ -23,32 +29,39 @@ let audioArray = [
 document.querySelector('.button-play').addEventListener("click", function () {
     play();
     playSound();
+
+    new SoundList();
+
 });
+
 document.querySelector(".button-stop").addEventListener("click", function () {
     stop();
     stopSound();
 });
+
 document.querySelector('.button-play').addEventListener("touchend", function () {
     play();
     playSound();
 });
+
 document.querySelector(".button-stop").addEventListener("touchend", function () {
     stop();
     stopSound();
 });
 
 //функция старт анимации
-function play () {
+function play() {
     if (recordBody.classList.contains('record-rotate')) {
         recordBody.classList.remove('record-rotate');
         recordBody.classList.add('record-play');
     };
-//анимация нот
+
+    //анимация нот
     for (let i = 0; i < note.length; i++) {
         note[i].classList.add('dance-scale');
     };
 
-    setTimeout( function() {
+    setTimeout(function () {
         stop();
     }, 53250 * 20);//останавливаем анимацию при остановке песен
 };
@@ -58,14 +71,14 @@ function playSound() {
     let player = document.getElementById('player');
     let current = 0;
     player.src = audioArray[0];
-    player.onended = function() {
+    player.onended = function () {
         current++;
         if (current >= audioArray.length) current = 0;
         player.src = audioArray[current];
         player.play();
     };
 
-    setTimeout( function() {
+    setTimeout(function () {
         stopSound();
     }, 53250 * 20);//остановка песен после 17 минут 45 секунд
 };
@@ -78,12 +91,12 @@ function stopSound() {
 };
 
 //функция стоп анимации
-function stop () {
+function stop() {
     if (recordBody.classList.contains('record-play')) {
         recordBody.classList.remove('record-play');
         recordBody.classList.add('record-rotate');
     }
-//остановка анимации нот
+    //остановка анимации нот
     for (let i = 0; i < note.length; i++) {
         note[i].classList.remove('dance-scale');
     }
