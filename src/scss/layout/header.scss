@@ -1,0 +1,64 @@
+.header {
+    background-color:bisque;
+
+    &__container {
+        padding: 20px;
+        min-height: 50px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        font-family: "SyneMono", "PT Mono", monospace;
+        font-size: 16px;
+        color: #666363;
+        padding: 10px 25px;
+    }
+
+    &__button {
+        background-color: inherit;
+        color: inherit;
+
+        &:focus {
+            text-decoration: underline;
+        }
+
+        &:hover {
+            color: red;
+        }
+    }
+
+    &__link {
+        color: inherit;
+
+        &:focus {
+            text-decoration: underline;
+        }
+
+        &:hover {
+            color: red;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .header {
+        &__container {
+            padding: 10px;
+        }
+
+        &__list {
+            flex-direction: column;
+        }
+
+        &__item {
+            
+        }
+    }
+}

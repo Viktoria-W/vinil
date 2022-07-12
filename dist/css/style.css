@@ -445,6 +445,54 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-rows: min-content 1fr min-content;
 }
 
+.header {
+  background-color: bisque;
+}
+.header__container {
+  padding: 20px;
+  min-height: 50px;
+}
+.header__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.header__item {
+  font-family: "SyneMono", "PT Mono", monospace;
+  font-size: 16px;
+  color: #666363;
+  padding: 10px 25px;
+}
+.header__button {
+  background-color: inherit;
+  color: inherit;
+}
+.header__button:focus {
+  text-decoration: underline;
+}
+.header__button:hover {
+  color: red;
+}
+.header__link {
+  color: inherit;
+}
+.header__link:focus {
+  text-decoration: underline;
+}
+.header__link:hover {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .header__container {
+    padding: 10px;
+  }
+  .header__list {
+    flex-direction: column;
+  }
+}
 .main {
   background: #ee9a2ce8 url("../img/bgr.jpg") center/cover no-repeat;
 }
@@ -1114,4 +1162,8 @@ h1, h2, h3, h4, h5, h6 {
 .footer__img {
   display: block;
   margin: 20px;
+}
+.footer__img:hover {
+  background-color: #fff;
+  border-radius: 60px;
 }
