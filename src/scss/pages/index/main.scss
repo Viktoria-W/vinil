@@ -6,9 +6,16 @@
 		&__note {
 		}
 
+		&__recor-wrapper {
+			max-width: 1000px;
+            margin: 0 auto;
+		}
+
 		&__vinil-record-player {
-            margin: 10% 25%;
-			padding-bottom: 140px;
+			// padding-left: 20%;
+			// padding-top: 45%;
+			// padding-bottom: 140px;
+			margin: 15% 25% 5%;
 		}
         
         &__sound-list {
@@ -27,6 +34,15 @@
 #player  {
 	
 }
+
+@media (max-width: $laptop) {
+	.main {
+		&__vinil-record-player {
+			margin: 25% 20% 5%;
+		}
+	}
+}
+
 @media (max-width: $tablet) {
 	.main {
 		&__vinil-record-player {

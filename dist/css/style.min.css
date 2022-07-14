@@ -496,9 +496,12 @@ h1, h2, h3, h4, h5, h6 {
 .main {
   background: #ee9a2ce8 url("../img/bgr.jpg") center/cover no-repeat;
 }
+.main__recor-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .main__vinil-record-player {
-  margin: 10% 25%;
-  padding-bottom: 140px;
+  margin: 15% 25% 5%;
 }
 .title {
   font-family: "SyneMono", "PT Mono", monospace;
@@ -509,6 +512,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 105%;
 }
 
+@media (max-width: 1024px) {
+  .main__vinil-record-player {
+    margin: 25% 20% 5%;
+  }
+}
 @media (max-width: 768px) {
   .main__vinil-record-player {
     margin: 10% 15%;

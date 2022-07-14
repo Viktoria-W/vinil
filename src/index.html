@@ -9,23 +9,24 @@
         <h1 class="visually-hidden">Wayne Vinil</h1>
         @@include('html/header.html', {})
         <main class="main">
-            <div class="main__container container">
+            <!-- <div class="main__container container"> -->
 
 
-                <section class="main__sound-list sound-list">
+            <section class="main__sound-list sound-list">
 
-                </section>
+            </section>
 
-                <section class="main__note note">
-                    <div class="note__container container">
-                        <img src="img/note-1.svg" alt="Listen to music" class="note__img">
-                        <img src="img/note-2.svg" alt="Listen to music" class="note__img">
-                        <img src="img/note-3.svg" alt="Listen to music" class="note__img">
-                        <img src="img/note-4.svg" alt="Listen to music" class="note__img">
-                        <img src="img/note-5.svg" alt="Listen to music" class="note__img">
-                    </div>
-                </section>
+            <section class="main__note note">
+                <div class="note__container container">
+                    <img src="img/note-1.svg" alt="Listen to music" class="note__img">
+                    <img src="img/note-2.svg" alt="Listen to music" class="note__img">
+                    <img src="img/note-3.svg" alt="Listen to music" class="note__img">
+                    <img src="img/note-4.svg" alt="Listen to music" class="note__img">
+                    <img src="img/note-5.svg" alt="Listen to music" class="note__img">
+                </div>
+            </section>
 
+            <div class="main__recor-wrapper">
                 <section class="main__vinil-record-player vinil-record-player">
                     <div class="vinil-record-player__corpus corpus">
                         <div class="corpus__top-side">
@@ -67,9 +68,12 @@
                         </div>
                     </div>
                 </section>
-
-                <audio id="player" autoplay></audio>
             </div>
+
+
+
+            <audio id="player" autoplay></audio>
+            <!-- </div> -->
         </main>
         @@include('html/footer.html', {})
     </div>
