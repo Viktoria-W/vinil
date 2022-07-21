@@ -1,29 +1,30 @@
 .footer {
-background-color:   rgb(58, 58, 58);
+    background-color:   #0b0c10;
+
     &__container {
         min-height: 80px;
         padding-top: 20px;
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
 
     &__text {
-        color: #fff;
-        opacity: .5;
+        color: #c5c6c7;
+        margin-bottom: 10px;
+
+        &:not(:last-child) {
+            font-size: 18px;
+        }
     }
 
     &__link {
-    }
-
-    &__img {
-        display: block;
-        margin: 20px;
+        color: #45a29e;
 
         &:hover {
-            background-color: #fff;
-            border-radius: 60px;
+            color: #66fcf1;
         }
     }
 }

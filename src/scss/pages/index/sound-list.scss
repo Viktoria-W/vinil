@@ -5,18 +5,20 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      margin-bottom: 30px;
 	}
 
 	&__list {
       margin: 50px 0px 10px 0px;
-      background-color: #fff;
+      background-color: #1f2833;
       border-radius: 10px;
-      padding: 10px;
+      padding: 10px 20px;
       position: relative;
 	}
 
 	&__item {
       font-family: "SyneMono", "PT Mono", monospace;
+      color: #c5c6c7;
       font-size: 16px;
       line-height: 105%;
       padding-bottom: 15px;
@@ -28,8 +30,8 @@
       }
 }
 
-.item-selected {
-      color: red;
+.title {
+      color: #45a29e;
 }
 
 @media (max-width: $mobile-l) {

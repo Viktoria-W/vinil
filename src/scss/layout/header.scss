@@ -1,5 +1,5 @@
 .header {
-    background-color:bisque;
+    background-color: #0b0c10;
 
     &__container {
         padding: 20px;
@@ -17,7 +17,7 @@
     &__item {
         font-family: "SyneMono", "PT Mono", monospace;
         font-size: 16px;
-        color: #666363;
+        color: #66fcf1;
         padding: 10px 25px;
     }
 
@@ -30,7 +30,7 @@
         }
 
         &:hover {
-            color: red;
+            color: #c5c6c7;
         }
     }
 
@@ -42,7 +42,7 @@
         }
 
         &:hover {
-            color: red;
+            color: #c5c6c7;
         }
     }
 }
@@ -55,10 +55,6 @@
 
         &__list {
             flex-direction: column;
-        }
-
-        &__item {
-            
         }
     }
 }

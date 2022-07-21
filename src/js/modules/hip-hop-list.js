@@ -1,9 +1,8 @@
 export const arrayHipHopList = [
-    '0-vinyl-record.mp3',
-    '1-hip-hop-n-jazz.mp3',
-    '3-session-joda-mstr.mp3',
-    '4-all-i-need.mp3',
-    '5-day-dreaming-andi-remix.mp3',
-    '6-gone-get-it-n89man-remix.mp3',
-    '7-wataboi-wake-up-ft-romy-dya.mp3'
+    '1 - Hip-Hop & jazz',
+    '3 - Session joda',
+    '4 - All i need',
+    '5 - Day dreaming (Andi-remix)',
+    '6 - Gone get it (n89man-remix)',
+    '7 - Wataboi wake up'
 ];

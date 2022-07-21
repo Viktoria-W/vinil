@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  background-color: bisque;
+  background-color: #0b0c10;
 }
 .header__container {
   padding: 20px;
@@ -462,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__item {
   font-family: "SyneMono", "PT Mono", monospace;
   font-size: 16px;
-  color: #666363;
+  color: #66fcf1;
   padding: 10px 25px;
 }
 .header__button {
@@ -473,7 +473,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 .header__button:hover {
-  color: red;
+  color: #c5c6c7;
 }
 .header__link {
   color: inherit;
@@ -482,7 +482,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 .header__link:hover {
-  color: red;
+  color: #c5c6c7;
 }
 
 @media (max-width: 768px) {
@@ -494,10 +494,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .main {
-  background: #ee9a2ce8 url("../img/bgr.jpg") center/cover no-repeat;
+  background: #c5c6c7 url("../img/bgr.jpg") center/cover no-repeat;
 }
 .main__recor-wrapper {
   max-width: 1000px;
+  padding-bottom: 10%;
   margin: 0 auto;
 }
 .main__vinil-record-player {
@@ -983,16 +984,18 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 30px;
 }
 .sound-list__list {
   margin: 50px 0px 10px 0px;
-  background-color: #fff;
+  background-color: #1f2833;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   position: relative;
 }
 .sound-list__item {
   font-family: "SyneMono", "PT Mono", monospace;
+  color: #c5c6c7;
   font-size: 16px;
   line-height: 105%;
   padding-bottom: 15px;
@@ -1002,8 +1005,8 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-.item-selected {
-  color: red;
+.title {
+  color: #45a29e;
 }
 
 @media (max-width: 425px) {
@@ -1023,24 +1026,26 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .note__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
+  position: relative;
 }
 .note__img {
-  display: block;
-  width: 60px;
-  height: 60px;
-  margin: 0px 0px 15px 0px;
+  width: 45px;
+  height: inherit;
+  margin: 10px;
 }
 
-@media (max-width: 320px) {
-  .note__container {
-    max-width: 250px;
-    margin: 15px;
-  }
+.container__left {
+  position: absolute;
+  top: 0;
+  left: 5%;
 }
+
+.container__right {
+  position: absolute;
+  top: 0;
+  left: 80%;
+}
+
 .dance-scale {
   animation: dance-scale 0.8s infinite linear;
 }
@@ -1053,125 +1058,28 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.2);
   }
 }
-.album__container {
-  box-sizing: content-box;
-  height: inherit;
-  margin-top: 50px;
-  padding-bottom: 20px;
-}
-.album__title {
-  padding-top: 20px;
-}
-.album__wrapper {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.album__img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  border: 5px solid #ee9a2ce8;
-  border-radius: 5px;
-}
-.album__hiphop {
-  margin: 15px;
-}
-.album__record {
-  width: 200px;
-  height: 200px;
-}
-.album__pop {
-  margin: 15px;
-}
-
-.hiphop__block-img {
-  position: relative;
-}
-.hiphop__img {
-  position: relative;
-  z-index: 5;
-  cursor: pointer;
-}
-.hiphop__img:hover {
-  opacity: 0.9;
-}
-.hiphop__record {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-@keyframes recordMove {
-  0% {
-    left: 0px;
-  }
-  100% {
-    left: 50px;
-  }
-}
-.pop__block-img {
-  position: relative;
-}
-.pop__img {
-  position: relative;
-  z-index: 5;
-  cursor: pointer;
-}
-.pop__img:hover {
-  opacity: 0.9;
-}
-.pop__record {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-@media (max-width: 425px) {
-  .album__container {
-    padding: 10px 0px;
-  }
-  .album__wrapper {
-    max-width: 250px;
-  }
-  .album__img {
-    width: 150px;
-    height: 150px;
-  }
-  .album__record {
-    width: 150px;
-    height: 150px;
-  }
-}
 .footer {
-  background-color: #3a3a3a;
+  background-color: #0b0c10;
 }
 .footer__container {
   min-height: 80px;
   padding-top: 20px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 .footer__text {
-  color: #fff;
-  opacity: 0.5;
+  color: #c5c6c7;
+  margin-bottom: 10px;
 }
-.footer__img {
-  display: block;
-  margin: 20px;
+.footer__text:not(:last-child) {
+  font-size: 18px;
 }
-.footer__img:hover {
-  background-color: #fff;
-  border-radius: 60px;
+.footer__link {
+  color: #45a29e;
+}
+.footer__link:hover {
+  color: #66fcf1;
 }

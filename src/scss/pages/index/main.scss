@@ -1,5 +1,5 @@
 .main {
-    background: #ee9a2ce8 url("../img/bgr.jpg") center / cover no-repeat;
+    background: #c5c6c7 url("../img/bgr.jpg") center / cover no-repeat;
 		&__container {
 		}
 		
@@ -8,13 +8,11 @@
 
 		&__recor-wrapper {
 			max-width: 1000px;
+			padding-bottom: 10%;
             margin: 0 auto;
 		}
 
 		&__vinil-record-player {
-			// padding-left: 20%;
-			// padding-top: 45%;
-			// padding-bottom: 140px;
 			margin: 15% 25% 5%;
 		}
         
