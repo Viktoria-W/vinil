@@ -1,10 +1,10 @@
 import createElement from "./create-element.js";
-import { arrayHipHopList } from "./hip-hop-list.js";
 
 export default class SoundList {
     #elem
 
     constructor(list) {
+        this.list = list;
         this.template = this.#templateSoundList();
         this.#elem = this.render();
     }
@@ -21,7 +21,7 @@ export default class SoundList {
             <div class="sound-list__container container">
                 <ul class="sound-list__list">
                     <li class="sound-list__item title">Sound-list:</li>
-                    ${arrayHipHopList.map(el => `<li class="sound-list__item">${el}</li>`).join(' ')}
+                    ${this.list.map(el => `<li class="sound-list__item">${el}</li>`).join(' ')}
                 </ul>
             </div>
         `

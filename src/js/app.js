@@ -7,6 +7,9 @@ flsFunctions.isWebp();
 import SoundList from "./modules/sound-list.js";
 
 
+//sound-list
+import { arrayHipHopList } from "./modules/hip-hop-list.js";
+import { arrayPopList } from "./modules/pop-list.js";
 
 
 
@@ -16,23 +19,25 @@ const recordBody = document.querySelector('.record__body');
 const note = document.querySelectorAll('.note__img');
 const noteList = document.querySelector('.note__container');
 let audioArray = [
-    '../files/sound/0-vinyl-record.mp3',
-    '../files/sound/1-hip-hop-n-jazz.mp3',
-    '../files/sound/3-session-joda-mstr.mp3',
-    '../files/sound/4-all-i-need.mp3',
-    '../files/sound/5-day-dreaming-andi-remix.mp3',
-    '../files/sound/6-gone-get-it-n89man-remix.mp3',
-    '../files/sound/7-wataboi-wake-up-ft-romy-dya.mp3',
+    '../files/sound/hip-hop/0-vinyl-record.mp3',
+    '../files/sound/hip-hop/1-hip-hop-n-jazz.mp3',
+    '../files/sound/hip-hop/3-session-joda-mstr.mp3',
+    '../files/sound/hip-hop/4-all-i-need.mp3',
+    '../files/sound/hip-hop/5-day-dreaming-andi-remix.mp3',
+    '../files/sound/hip-hop/6-gone-get-it-n89man-remix.mp3',
+    '../files/sound/hip-hop/7-wataboi-wake-up-ft-romy-dya.mp3',
 ];
 
 //нажатие кнопок при клике и при касании с телефона
 document.querySelector('.button-play').addEventListener("click", function () {
     play();
     playSound();
-
-    new SoundList();
-
+    showNote();
 });
+
+document.querySelector('.button-play').addEventListener("click", function () {
+    new SoundList(arrayHipHopList);
+}, { once: true });
 
 document.querySelector(".button-stop").addEventListener("click", function () {
     stop();
@@ -48,6 +53,35 @@ document.querySelector(".button-stop").addEventListener("touchend", function () 
     stop();
     stopSound();
 });
+
+
+document.getElementById('pop').addEventListener("click", () => {
+    document.querySelector('.button-play').addEventListener("click", function () {
+        play();
+        playSound();
+        showNote();
+    });
+
+    document.querySelector('.button-play').addEventListener("click", function () {
+        new SoundList(arrayPopList);
+    }, { once: true });
+});
+
+
+
+
+//функция появления нот
+
+function showNote() {
+    const note = document.querySelectorAll('.main__note');
+
+    note.forEach(el => {
+        if (el.classList.contains('hidden')) {
+            el.classList.toggle('hidden');
+        }
+    });
+}
+
 
 //функция старт анимации
 function play() {

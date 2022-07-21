@@ -296,6 +296,7 @@ left: 500px;
         }
     }
 }
+
 //анимация прокрутки пластинки
 @keyframes recordRotate {
     0% {
@@ -305,9 +306,11 @@ left: 500px;
         transform: skewY(355deg) rotateX(104deg) rotate(0deg);
     }
 }
+
 .record-rotate {
     transform: skewY(355deg) rotateX(104deg);
 }
+
 .record-play {
     animation: recordRotate 5s infinite linear;
 }

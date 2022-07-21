@@ -37,14 +37,15 @@
 @media (max-width: $mobile-l) {
       .sound-list {
             &__container {
-                  padding: 0px 20%;
+                  padding: 10% 20%;
             }
+
             &__list {
                   max-width: 200px;
             }
 
             &__item {
-            font-size: 14px;
+                  font-size: 14px;
             }
       }
 }

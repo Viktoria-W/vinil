@@ -1,8 +1,3 @@
-.main {
-
-    &__note {
-    }
-}
 .note {
 
     &__container {
@@ -11,21 +6,48 @@
 
     &__img {
         width: 45px;
-        height: inherit;
+        height: 60px;
         margin: 10px;
+    }
+
+    &__img-left {
+        &:nth-child(2) {
+            margin-top: 45px;
+        }
+
+        &:nth-child(3) {
+            margin-top: 85px;
+        }
+    }
+
+    &__img-right {
+        &:nth-child(1) {
+            margin-top: 95px;
+        }
+
+        &:nth-child(2) {
+            margin-top: 55px;
+        }
     }
 }
 
-.container__left {
+.container {
+
+    &__left {
     position: absolute;
     top: 0;
-    left: 5%;
+    left: 20%;
+    }
+
+    &__right {
+    position: absolute;
+    top: 0;
+    left: 65%;
+    }
 }
 
-.container__right {
-    position: absolute;
-    top: 0;
-    left: 80%;
+.hidden {
+    display: none;
 }
 
 
@@ -39,5 +61,89 @@
     }
     100% {
         transform: scale(1.2);
+    }
+}
+
+@media (max-width: $laptop-l) {
+    .container {
+        &__left {
+            top: 20px;
+            left: 10%;
+        }
+
+        &__right {
+            top: 20px;
+            left: 70%;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        %noteposition {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        &__left {
+            @extend %noteposition;
+            left: 5%;
+        }
+
+        &__right {
+            @extend %noteposition;
+            left: 80%;
+        }
+    }
+
+    .note {
+        &__img-left {
+            margin-top: 20px;
+            &:nth-child(2) {
+                margin-top: 0;
+            }
+    
+            &:nth-child(3) {
+                margin-top: 0;
+            }
+        }
+    
+        &__img-right {
+            margin-top: 20px;
+            &:nth-child(1) {
+                margin-top: 0;
+            }
+    
+            &:nth-child(2) {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-l) {
+    .note {
+        &__img {
+            width: 25px;
+            height: 40px;
+        }
+
+        &__img-left {
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+
+        &__img-right {
+            &:nth-child(1) {
+                margin-top: 80px;
+                margin-bottom: 35px;
+            }
+
+            &:nth-child(2) {
+                margin-bottom: 30px;
+            }
+        }
     }
 }
