@@ -1,3 +1,4 @@
+
 import * as flsFunctions from "./modules/functions.js";
 
 //функция проверки на Webp
@@ -12,27 +13,29 @@ import { arrayHipHopList } from "./modules/hip-hop-list.js";
 import { arrayPopList } from "./modules/pop-list.js";
 
 
+//импорт массивов песен
+import { audioHipHopArray } from "./modules/hip-hop-array.js";
+import { audioPopArray } from "./modules/pop-array.js";
+
+
+//импорт функции воспроизведения
+import playSound from "./modules/function-play-sound.js";
+
+//импорт функций нот
+import showNote from "./modules/note.js";
+import moveNote from "./modules/move-note.js";
+
 
 //Анимация пластинки и нот
-
 const recordBody = document.querySelector('.record__body');
-const note = document.querySelectorAll('.note__img');
-const noteList = document.querySelector('.note__container');
-let audioArray = [
-    '../files/sound/hip-hop/0-vinyl-record.mp3',
-    '../files/sound/hip-hop/1-hip-hop-n-jazz.mp3',
-    '../files/sound/hip-hop/3-session-joda-mstr.mp3',
-    '../files/sound/hip-hop/4-all-i-need.mp3',
-    '../files/sound/hip-hop/5-day-dreaming-andi-remix.mp3',
-    '../files/sound/hip-hop/6-gone-get-it-n89man-remix.mp3',
-    '../files/sound/hip-hop/7-wataboi-wake-up-ft-romy-dya.mp3',
-];
 
-//нажатие кнопок при клике и при касании с телефона
+
+//воспроизведение по умолчанию (хип-хоп)
 document.querySelector('.button-play').addEventListener("click", function () {
     play();
-    playSound();
+    playSound(audioHipHopArray);
     showNote();
+    moveNote();
 });
 
 document.querySelector('.button-play').addEventListener("click", function () {
@@ -44,25 +47,33 @@ document.querySelector(".button-stop").addEventListener("click", function () {
     stopSound();
 });
 
-document.querySelector('.button-play').addEventListener("touchend", function () {
-    play();
-    playSound();
+
+//хип-хоп лист воспроизведение
+document.getElementById('hip-hop').addEventListener('click', ()=> {
+    document.querySelector('.button-play').addEventListener('click', () => {
+        play();
+        playSound(audioHipHopArray);
+        showNote();
+    });
+
+    document.querySelector('.button-play').addEventListener('click', () => {
+        removeSoundList();
+        new SoundList(arrayHipHopList);
+    });
 });
 
-document.querySelector(".button-stop").addEventListener("touchend", function () {
-    stop();
-    stopSound();
-});
 
 
+//поп лист воспроизведение
 document.getElementById('pop').addEventListener("click", () => {
     document.querySelector('.button-play').addEventListener("click", function () {
         play();
-        playSound();
+        playSound(audioPopArray);
         showNote();
     });
 
     document.querySelector('.button-play').addEventListener("click", function () {
+        removeSoundList();
         new SoundList(arrayPopList);
     }, { once: true });
 });
@@ -70,17 +81,21 @@ document.getElementById('pop').addEventListener("click", () => {
 
 
 
-//функция появления нот
 
-function showNote() {
-    const note = document.querySelectorAll('.main__note');
 
-    note.forEach(el => {
-        if (el.classList.contains('hidden')) {
-            el.classList.toggle('hidden');
-        }
-    });
+
+
+
+
+
+//функция удаление списка песен при переключении
+function removeSoundList() {
+    let parentElement = document.querySelector('.sound-list');
+    let childElement = document.querySelector('.sound-list__container')
+
+    parentElement.removeChild(childElement);
 }
+
 
 
 //функция старт анимации
@@ -90,35 +105,12 @@ function play() {
         recordBody.classList.add('record-play');
     };
 
-    //анимация нот
-    for (let i = 0; i < note.length; i++) {
-        note[i].classList.add('dance-scale');
-    };
-
-    setTimeout(function () {
-        stop();
-    }, 53250 * 20);//останавливаем анимацию при остановке песен
-};
-
-//Воспроизведение песен по очереди из массива
-function playSound() {
-    let player = document.getElementById('player');
-    let current = 0;
-    player.src = audioArray[0];
-    player.onended = function () {
-        current++;
-        if (current >= audioArray.length) current = 0;
-        player.src = audioArray[current];
-        player.play();
-    };
-
-    setTimeout(function () {
-        stopSound();
-    }, 53250 * 20);//остановка песен после 17 минут 45 секунд
+    // setTimeout(function () {
+    //     stop();
+    // }, 53250 * 20);//останавливаем анимацию при остановке песен
 };
 
 
-//функция остановки песен
 function stopSound() {
     let player = document.getElementById('player');
     player.pause();
