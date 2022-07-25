@@ -47,6 +47,10 @@
     }
 }
 
+.active-button {
+    color: #c5c6c7;
+}
+
 @media (max-width: $tablet) {
     .header {
         &__container {

@@ -5,13 +5,19 @@ export default function playSound(array) {
 
     player.onended = function () {
         current++;
-        
         if (current >= array.length) current = 0;
-            player.src = array[current];
-            player.play();
+        player.src = array[current];
+        player.play();
+        
 
         if (current === 0){
-            player.pause();  
+            player.pause(); 
+            
+            //остановить движение нот в конце массива
+            const note = document.querySelectorAll('.note__img');
+            for (let i = 0; i < note.length; i++) {
+                note[i].classList.remove('dance-scale');
+            }
         };
     };
 };
