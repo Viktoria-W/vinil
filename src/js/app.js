@@ -10,11 +10,13 @@ import SoundList from "./modules/sound-list.js";
 //импорт списков песен
 import { arrayHipHopList } from "./modules/hip-hop-list.js";
 import { arrayPopList } from "./modules/pop-list.js";
+import { arrayRockList } from "./modules/rock-list.js";
 
 
 //импорт массивов песен
 import { audioHipHopArray } from "./modules/hip-hop-array.js";
 import { audioPopArray } from "./modules/pop-array.js";
+import { audioRockArray } from "./modules/rock-array.js";
 
 
 //импорт функции удаления списка песен
@@ -39,8 +41,17 @@ const buttonStop = document.querySelector('.button-stop');
 //импорт функции показа типа пластинки
 import showTypeOfRecord from "./modules/type-of-record.js";
 
-//импорт функции активных кнопок
-import showActiveButtonType from "./modules/focus-type-button.js";
+
+//импорт функции скрытия неактивной кнопки
+import hiddenInactiveButton from "./modules/hidden-inactive-button.js";
+
+
+//кнопки стилей песен
+
+const buttonPop = document.getElementById('pop');
+const buttonHipHop = document.getElementById('hip-hop');
+const buttonRock = document.getElementById('rock');
+
 
 //воспроизведение по умолчанию (хип-хоп)
 buttonPlay.addEventListener("click", function () {
@@ -63,7 +74,10 @@ buttonStop.addEventListener("click", function () {
 
 
 //хип-хоп лист воспроизведение
-document.getElementById('hip-hop').addEventListener('click', ()=> {
+buttonHipHop.addEventListener('click', () => {
+    hiddenInactiveButton();
+    buttonHipHop.classList.add('active-button');
+
     buttonPlay.addEventListener('click', () => {
         startRecordAnimation();
         playSound(audioHipHopArray);
@@ -75,15 +89,14 @@ document.getElementById('hip-hop').addEventListener('click', ()=> {
     buttonPlay.addEventListener('click', () => {
         removeSoundList();
         new SoundList(arrayHipHopList);
-    });
+    }, { once: true });
 });
 
 
-
 //поп лист воспроизведение
-const buttonPop = document.getElementById('pop');
 buttonPop.addEventListener("click", () => {
-    showActiveButtonType();
+    hiddenInactiveButton();
+    buttonPop.classList.add('active-button');
 
     buttonPlay.addEventListener("click", function () {
         startRecordAnimation();
@@ -99,6 +112,25 @@ buttonPop.addEventListener("click", () => {
     }, { once: true });
 });
 
+
+//рок дист воспроизведение
+buttonRock.addEventListener('click', () => {
+    hiddenInactiveButton();
+    buttonRock.classList.add('active-button');
+
+    buttonPlay.addEventListener('click', () => {
+        startRecordAnimation();
+        playSound(audioRockArray);
+        showNote();
+        moveNote();
+        showTypeOfRecord('Rock');
+    });
+
+    buttonPlay.addEventListener('click', () => {
+        removeSoundList();
+        new SoundList(arrayRockList);
+    }, { once: true });
+});
 
 //Анимация пластинки и нот
 const recordBody = document.querySelector('.record__body');

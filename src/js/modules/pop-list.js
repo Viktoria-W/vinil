@@ -1,9 +1,9 @@
 export const arrayPopList = [
     '1 - Girl like me',
-    '2 - Keeps me high',
-    '3 - Feels like...',
-    '4 - Danger',
-    '5 - Fire emotional',
-    '6 - Indi pop',
-    '7 - My god'
+    '2 - Away',
+    '3 - Newcomer',
+    '4 - Indi pop',
+    '5 - Oh Yeah the Future',
+    '6 - She`s everything',
+    '7 - Reach-you'
 ];

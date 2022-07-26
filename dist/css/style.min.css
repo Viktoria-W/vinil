@@ -518,7 +518,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .type {
-  max-width: 200px;
+  max-width: 175px;
   min-height: 50px;
   margin: 30px 0px 0px 20%;
   padding: 15px;
@@ -539,6 +539,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 1024px) {
+  .main__recor-wrapper {
+    padding-bottom: 50%;
+  }
   .main__vinil-record-player {
     margin: 25% 20% 5%;
   }
