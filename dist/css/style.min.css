@@ -517,27 +517,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 105%;
 }
 
-.type {
-  max-width: 175px;
-  min-height: 50px;
-  margin: 30px 0px 0px 20%;
-  padding: 15px;
-  border-radius: 25px;
-  background-color: #0b0c10;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: center;
-}
-.type__title {
-  color: #c5c6c7;
-}
-.type__text {
-  padding-left: 5px;
-  color: #45a29e;
-}
-
 @media (max-width: 1024px) {
   .main__recor-wrapper {
     padding-bottom: 50%;
@@ -549,6 +528,48 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .main__vinil-record-player {
     margin: 10% 15%;
+  }
+}
+.banner {
+  background-color: rgba(31, 40, 51, 0.8);
+  font-family: "SyneMono", "PT Mono", monospace;
+  font-size: 16px;
+  line-height: 105%;
+  color: #c5c6c7;
+}
+.banner__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px 40px;
+}
+.banner__manual {
+  margin-bottom: 10px;
+  align-self: center;
+}
+.banner__type {
+  margin-bottom: 5px;
+}
+
+.type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #0b0c10;
+  padding: 15px;
+  border-radius: 25px;
+}
+.type__title {
+  text-decoration: underline;
+}
+.type__text {
+  padding-left: 10px;
+  color: #66fcf1;
+}
+
+@media (max-width: 425px) {
+  .banner__container {
+    justify-content: center;
   }
 }
 /*-----------------Корпус--------------------------------------------*/
@@ -632,6 +653,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 .front-side__nav {
   position: relative;
+}
+
+.speakers-dance {
+  animation: speakersdance 1s infinite linear;
+}
+
+@keyframes speakersdance {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+.speakers-right, .speakers-left, .front-side__speakers::after, .front-side__speakers::before, .front-side__speakers span::after, .front-side__speakers span::before {
+  box-shadow: -5px 3px 5px 0px rgba(147, 151, 154, 0.2) inset;
 }
 
 .speakers-left {
@@ -966,14 +1006,13 @@ h1, h2, h3, h4, h5, h6 {
   .record__profile {
     width: 30px;
     height: 30px;
-    top: 165px;
-    left: 190px;
+    top: 175px;
+    left: 175px;
     box-shadow: 0px 0px 0px 30px rgba(165, 165, 165, 0.2);
   }
 
   .profile__stripes {
     width: 70px;
-    height: 70px;
   }
   .profile__stripes-top {
     top: -70px;
@@ -984,10 +1023,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   .profile__stripes-bottom {
     top: 0px;
-    left: -30px;
   }
   .profile__stripes-bottom::after {
-    top: 5px;
+    top: 35px;
   }
 }
 /*-----------------Медиа-запросы(Держатель иглы)--------------------------------------------*/
@@ -1037,6 +1075,21 @@ h1, h2, h3, h4, h5, h6 {
   color: #45a29e;
 }
 
+.active-sound {
+  animation: blink 3s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    color: #45a29e;
+  }
+  50% {
+    color: rgba(69, 162, 158, 0);
+  }
+  100% {
+    color: #45a29e;
+  }
+}
 @media (max-width: 425px) {
   .sound-list__container {
     padding: 10% 20%;
@@ -1060,18 +1113,30 @@ h1, h2, h3, h4, h5, h6 {
   width: 45px;
   height: 60px;
   margin: 10px;
+  position: relative;
+}
+.note__img-left:nth-child(1) {
+  animation-delay: 0.1s;
 }
 .note__img-left:nth-child(2) {
   margin-top: 45px;
+  animation-delay: 0.2s;
 }
 .note__img-left:nth-child(3) {
   margin-top: 85px;
+  animation-delay: 0.3s;
 }
 .note__img-right:nth-child(1) {
   margin-top: 95px;
+  animation-delay: 0.4s;
 }
 .note__img-right:nth-child(2) {
   margin-top: 55px;
+  animation-delay: 0.5s;
+}
+.note__img-right:nth-child(3) {
+  margin-top: 55px;
+  animation-delay: 0.6s;
 }
 
 .container__left {
@@ -1090,15 +1155,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dance-scale {
-  animation: dance-scale 0.8s infinite linear;
+  animation: dance-scale 0.3s ease infinite alternate;
 }
 
 @keyframes dance-scale {
-  0% {
-    transform: scale(1);
-  }
   100% {
-    transform: scale(1.2);
+    top: -20px;
   }
 }
 @media (max-width: 1280px) {
@@ -1143,6 +1205,9 @@ h1, h2, h3, h4, h5, h6 {
   .note__img-right:nth-child(2) {
     margin-top: 0;
   }
+  .note__img-right:nth-child(3) {
+    margin-top: 15px;
+  }
 }
 @media (max-width: 425px) {
   .note__img {
@@ -1182,6 +1247,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .footer__link {
   color: #45a29e;
+}
+.footer__link:focus {
+  text-decoration: underline;
 }
 .footer__link:hover {
   color: #66fcf1;

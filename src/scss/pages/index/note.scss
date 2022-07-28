@@ -8,25 +8,38 @@
         width: 45px;
         height: 60px;
         margin: 10px;
+        position: relative;
     }
 
     &__img-left {
+        &:nth-child(1) {
+            animation-delay: 0.1s;
+        }
         &:nth-child(2) {
             margin-top: 45px;
+            animation-delay: 0.2s;
         }
 
         &:nth-child(3) {
             margin-top: 85px;
+            animation-delay: 0.3s;
         }
     }
 
     &__img-right {
         &:nth-child(1) {
             margin-top: 95px;
+            animation-delay: 0.4s;
         }
 
         &:nth-child(2) {
             margin-top: 55px;
+            animation-delay: 0.5s;
+        }
+
+        &:nth-child(3) {
+            margin-top: 55px;
+            animation-delay: 0.6s;
         }
     }
 }
@@ -52,15 +65,12 @@
 
 
 .dance-scale {
-    animation: dance-scale 0.8s infinite linear;
+    animation: dance-scale 0.3s ease infinite alternate;
 }
 
 @keyframes dance-scale {
-    0% {
-        transform: scale(1);
-    }
     100% {
-        transform: scale(1.2);
+        top: -20px;
     }
 }
 
@@ -101,6 +111,7 @@
     .note {
         &__img-left {
             margin-top: 20px;
+
             &:nth-child(2) {
                 margin-top: 0;
             }
@@ -118,6 +129,10 @@
     
             &:nth-child(2) {
                 margin-top: 0;
+            }
+
+            &:nth-child(3) {
+                margin-top: 15px;
             }
         }
     }

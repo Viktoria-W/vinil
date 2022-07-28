@@ -23,6 +23,10 @@
     &__link {
         color: #45a29e;
 
+        &:focus {
+            text-decoration: underline;
+        }
+
         &:hover {
             color: #66fcf1;
         }

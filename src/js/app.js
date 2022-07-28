@@ -32,6 +32,10 @@ import showNote from "./modules/note.js";
 import moveNote from "./modules/move-note.js";
 import stopNote from "./modules/stop-note.js";
 
+//импорт функции анимации пластинки
+import startRecordAnimation from "./modules/record-animation.js";
+import stopRecordAnimation from "./modules/stop-record-animation.js";
+
 
 //кнопки Play и Stop
 const buttonPlay = document.querySelector('.button-play');
@@ -45,12 +49,18 @@ import showTypeOfRecord from "./modules/type-of-record.js";
 //импорт функции скрытия неактивной кнопки
 import hiddenInactiveButton from "./modules/hidden-inactive-button.js";
 
+//импорт функции удаления анимации активной песни
+import removeHilghlightSoundList from "./modules/remove-highlight-sound-list.js";
+
 
 //кнопки стилей песен
-
 const buttonPop = document.getElementById('pop');
 const buttonHipHop = document.getElementById('hip-hop');
 const buttonRock = document.getElementById('rock');
+
+//колонки проигрывателя
+const speakers = document.querySelectorAll('.front-side__speakers');
+
 
 
 //воспроизведение по умолчанию (хип-хоп)
@@ -60,6 +70,7 @@ buttonPlay.addEventListener("click", function () {
     showNote();
     moveNote();
     showTypeOfRecord('Hip-Hop');
+    speakers.forEach(el => { el.classList.add('speakers-dance') });
 });
 
 buttonPlay.addEventListener("click", function () {
@@ -67,9 +78,10 @@ buttonPlay.addEventListener("click", function () {
 }, { once: true });
 
 buttonStop.addEventListener("click", function () {
-    stopAnimation();
+    stopRecordAnimation();
     stopSound();
     stopNote();
+    speakers.forEach(el => { el.classList.remove('speakers-dance') });
 });
 
 
@@ -90,6 +102,12 @@ buttonHipHop.addEventListener('click', () => {
         removeSoundList();
         new SoundList(arrayHipHopList);
     }, { once: true });
+
+    buttonStop.addEventListener("click", function () {
+        stopRecordAnimation();
+        stopSound();
+        stopNote();
+    });
 });
 
 
@@ -132,26 +150,12 @@ buttonRock.addEventListener('click', () => {
     }, { once: true });
 });
 
-//Анимация пластинки и нот
-const recordBody = document.querySelector('.record__body');
-
-function startRecordAnimation() {
-    if (recordBody.classList.contains('record-rotate')) {
-        recordBody.classList.remove('record-rotate');
-        recordBody.classList.add('record-play');
-    };
-};
 
 
-function stopAnimation() {
-    if (recordBody.classList.contains('record-play')) {
-        recordBody.classList.remove('record-play');
-        recordBody.classList.add('record-rotate');
-    }
-}
 
 
 function stopSound() {
     let player = document.getElementById('player');
     player.pause();
+    removeHilghlightSoundList();
 };

@@ -1,0 +1,49 @@
+.banner {
+    background-color: rgba(31, 40, 51, 0.8);
+    font-family: "SyneMono", "PT Mono", monospace;
+    font-size: 16px;
+    line-height: 105%;
+    color: #c5c6c7;
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 40px;
+    }
+
+    &__manual {
+        margin-bottom:  10px;
+        align-self: center;
+    }
+
+    &__type {
+        margin-bottom:  5px;
+    }
+}
+
+.type {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #0b0c10;
+    padding: 15px;
+    border-radius: 25px;
+
+    &__title {
+        text-decoration: underline;
+    }
+
+    &__text {
+        padding-left: 10px;
+        color: #66fcf1;
+    }
+}
+
+@media (max-width: $mobile-l) {
+    .banner {
+        &__container {
+            justify-content: center;
+        }
+    }
+}

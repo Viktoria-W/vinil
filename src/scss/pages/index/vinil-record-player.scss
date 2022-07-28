@@ -62,6 +62,7 @@ position: relative;
         background-color: #000;
         border-radius: 10px;
         z-index: 2;
+        
 
         &::after, &::before {
             content: '';
@@ -72,6 +73,7 @@ position: relative;
             height: 60px;
             position: absolute;
             border-radius: 10px;
+            @extend %speakers-shadow;
         }
 
         &::after {
@@ -91,6 +93,7 @@ position: relative;
             height: 40px;
             position: absolute;
             border-radius: 10px;
+            @extend %speakers-shadow;
         }
 
         & span::after {
@@ -108,14 +111,30 @@ position: relative;
     }
 }
 
+.speakers-dance {
+    animation: speakersdance 1s infinite linear;
+}
+
+@keyframes speakersdance {
+    0% {transform: scaleY(1);}
+    50% {transform: scaleY(1.1);}
+    100% {transform: scaleY(1);}
+}
+
+%speakers-shadow {
+    box-shadow: -5px 3px 5px 0px rgba(147, 151, 154, 0.2) inset;
+}
+
 .speakers-left {
-top: 20px;
-left: 75px;
+    top: 20px;
+    left: 75px;
+    @extend %speakers-shadow;
 }
 
 .speakers-right {
-top: 20px;
-left: 500px;
+    top: 20px;
+    left: 500px;
+    @extend %speakers-shadow;
 }
 
 .nav {
@@ -504,8 +523,8 @@ position: relative;
         &__profile {
             width: 30px;
             height: 30px;
-            top: 165px;
-            left: 190px;
+            top: 175px;
+            left: 175px;
             box-shadow: 0px 0px 0px 30px rgba(165, 165, 165, 0.2);
         }
     }
@@ -513,7 +532,6 @@ position: relative;
     .profile {
         &__stripes {
             width: 70px;
-            height: 70px;
 
             &::after {
             }
@@ -530,10 +548,9 @@ position: relative;
 
         &__stripes-bottom {
             top: 0px;
-            left: -30px;
 
             &::after {
-                top: 5px;
+                top: 35px;
             }
         }
     }
