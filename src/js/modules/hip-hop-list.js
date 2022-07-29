@@ -1,9 +1,9 @@
 export const arrayHipHopList = [
-    '1 - Hip-Hop & jazz',
+    '1 - All i need',
     '2 - Awakening',
-    '3 - Session joda',
-    '4 - All i need',
+    '3 - Silver haze',
+    '4 - Hip-Hop & jazz',
     '5 - Day dreaming',
-    '6 - Gone get it',
-    '7 - Wataboi wake up'
+    '6 - Dust in my attic',
+    '7 - City life cemetery'
 ];
