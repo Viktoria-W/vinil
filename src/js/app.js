@@ -159,3 +159,8 @@ function stopSound() {
     player.pause();
     removeHilghlightSoundList();
 };
+
+
+import About from "./modules/about.js";
+import { aboutVinyl } from "./modules/about-object.js";
+new About(aboutVinyl);
