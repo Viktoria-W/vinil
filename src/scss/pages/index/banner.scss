@@ -40,10 +40,16 @@
     }
 }
 
-@media (max-width: $mobile-l) {
+@media (max-width: $mobile-xl) {
     .banner {
         &__container {
             justify-content: center;
+        }
+    }
+
+    .manual {
+        &__text {
+            text-align: center;
         }
     }
 }

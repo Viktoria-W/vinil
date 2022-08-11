@@ -28,11 +28,12 @@
             text-decoration: none;
             }
       }
-}
 
-.title {
-      color: #45a29e;
-      font-size: 20px;
+      &__title {
+            text-align: center;
+            color: #45a29e;
+            font-size: 20px;
+      }
 }
 
 .active-sound {
@@ -45,10 +46,10 @@
       100% { color: rgba(69, 162, 158, 1); }
 }
 
-@media (max-width: $mobile-l) {
+@media (max-width: $mobile-xl) {
       .sound-list {
             &__container {
-                  padding: 10% 20%;
+                  padding: 10% 15%;
             }
 
             &__list {
@@ -62,9 +63,9 @@
 }
 
 @media (max-width: $mobile-s) {
-      .sound-list {
-            &__container {
-                  justify-content: flex-start;
-            }
-      }
+      // .sound-list {
+      //       &__container {
+      //             justify-content: flex-start;
+      //       }
+      // }
 }

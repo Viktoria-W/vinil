@@ -9,7 +9,6 @@
         <h1 class="visually-hidden">Wayne Vinyl</h1>
         @@include('html/header.html', {})
         <main class="main">
-            <!-- <div class="main__container container"> -->
 
 
             <section class="main__banner banner">
@@ -24,9 +23,8 @@
                 </div>
             </section>
 
-
-            <div class="main__recor-wrapper">
-                <section class="main__vinil-record-player vinil-record-player">
+            <div class="main__record-wrapper">
+                <div class="main__vinil-record-player vinil-record-player">
                     <div class="vinil-record-player__corpus corpus">
                         <div class="corpus__top-side">
                             <span></span>
@@ -66,7 +64,7 @@
                             <div class="pickup__tip"></div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
 
             <section class="main__note note hidden">
@@ -97,7 +95,6 @@
 
 
             <audio id="player" autoplay></audio>
-            <!-- </div> -->
         </main>
         @@include('html/footer.html', {})
     </div>

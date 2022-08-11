@@ -20,7 +20,7 @@ export default class SoundList {
             `
             <div class="sound-list__container container">
                 <ul class="sound-list__list">
-                    <li class="sound-list__item title">Sound-list:</li>
+                    <li class="sound-list__item sound-list__title">Sound-list:</li>
                     ${this.list.map(el => `<li class="sound-list__item">${el}</li>`).join(' ')}
                 </ul>
             </div>

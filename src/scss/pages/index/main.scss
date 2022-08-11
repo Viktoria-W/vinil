@@ -1,5 +1,5 @@
 .main {
-    background: #c5c6c7 url("../img/bgr.jpg") center / cover no-repeat;
+    background: #c5c6c7 url("../img/bgr.jpg") top / cover no-repeat;
 		&__container {
 		}
 		
@@ -9,7 +9,9 @@
 		&__note {
 		}
 
-		&__recor-wrapper {
+		&__record-wrapper {
+    
+
 			max-width: 1000px;
 			padding-bottom: 10%;
             margin: 0 auto;
@@ -27,7 +29,7 @@
 }
 
 .title {
-	font-family: "SyneMono", "PT Mono", monospace;
+	font-family: 'ReggaeOne','Lato', sans-serif;
 	text-transform: uppercase;
 	text-align: center;
 	font-weight: bold;
@@ -36,14 +38,16 @@
 }
 
 
-
-
+@media (max-height: 700px) {
+	.main {
+		&__record-wrapper {
+			padding-bottom: 35%;
+		}
+	}
+}
 
 @media (max-width: $laptop) {
 	.main {
-		&__recor-wrapper {
-			padding-bottom: 50%;
-		}
 		
 		&__vinil-record-player {
 			margin: 25% 20% 5%;

@@ -1,5 +1,5 @@
 .about {
-    background-color: #fff;
+    background-color: #0b0c10;
     &__wrapper {
         margin-top: 20px;
     }
@@ -11,31 +11,29 @@
 
     &__button {
         padding: 3px;
-        border: 2px solid #c5c6c7;
-        background-color: #c5c6c7;
+        border: 2px solid #0b0c10;
+        border-radius: 5px;
         color: #45a29e;
+        background-color: inherit;
 
         &:hover {
-            background-color: #0b0c10;
             color: #66fcf1;
         }
 
         &:focus {
-            background-color: #0b0c10;
-            border: 2px solid #66fcf1;
+            border-bottom: 1px solid #66fcf1;
+            padding-bottom: 2px;
         }
 
         &:active {
-            border: 2px solid #45a29e;
             color: #c5c6c7;
-            background-color: rgba(197, 198, 199, .2);
         }
     }
 
     &__title {
-        font-family: "SyneMono", "PT Mono", monospace;
+        font-family: 'ReggaeOne','Lato', sans-serif;
         font-weight: bold;
-        font-size: 34px;
+        font-size: 32px;
         line-height: 115%;
         text-align: center;
         color: #c5c6c7;
@@ -73,6 +71,7 @@
     }
 
     &__title {
+        color: #45a29e;
     }
 
     &__text-container {
@@ -93,7 +92,7 @@
 }
 
 .options {
-    background-color: rgba(197, 198, 199, .2);
+    background-color: rgba(255, 255, 255, 0.9);
     &__container {
         min-height: 200px;
     }
@@ -123,7 +122,7 @@
 }
 
 .style {
-    background-color: rgba(197, 198, 199, .2);
+    background-color:rgba(255, 255, 255, 0.9);
     &__container {
         min-height: 200px;
     }
@@ -163,6 +162,7 @@
 
     &__title {
         padding: 20px 10px;
+        color: #45a29e;
     }
 
     &__text-container {
@@ -185,16 +185,52 @@
         padding: 20px;
     }
 
-    &__img {
+    &__img-block {
         order: -1;
-        min-width: 350px;
-        max-height: 200px;
         margin: 20px;
+        position: relative;
+
+        &::after, &::before {
+            content: '';
+            width: 350px;
+            height: 200px;
+            position: absolute;
+            border: 6px solid white;
+            border-radius: 3px;
+            box-sizing: content-box;
+            box-shadow: 2px 2px 5px rgba(197, 198, 199, .2);
+        }
+
+        &::before {
+            background: #45a29e url('../../../img/vinyl-record.jpg') center / cover no-repeat;
+            top: -5px;
+            left: -20px;
+            transform: rotate(-8deg);
+        }
+
+        &::after {
+            background: #45a29e url('../../../img/records-style.jpg') center / cover no-repeat;
+            top: 5px;
+            left: 10px;
+            transform: rotate(8deg);
+        }
+    }
+
+    &__img {
+        width: 350px;
+        height: 200px;
+        display: block;
+        box-sizing: content-box;
+        border: 6px solid white;
+        border-radius: 3px;
+        box-shadow: 2px 2px 5px rgba(197, 198, 199, .2);
+        position: relative;
+        z-index: 1;
     }
 }
 
 .prototype {
-    background-color: rgba(197, 198, 199, .2);;
+    background-color: rgba(255, 255, 255, 0.9);
     &__container {
         min-height: 200px;
     }
@@ -211,5 +247,60 @@
     }
 
     &__text {
+    }
+}
+
+@media (max-width: $mobile-xl) {
+    .about {
+        &__button {
+            font-size: 20px;
+        }
+    }
+    .result {
+
+        &__img-block {
+            &::after, &::before {
+                width: 250px;
+            }
+        }
+        &__img {
+            width: 250px;
+        }
+    }
+
+    .options {
+        &__title {
+            text-align: center;
+        }
+    }
+
+    .style {
+        &__title {
+            text-align: center;
+        }
+    }
+
+    .prototype {
+        &__title {
+            text-align: center;
+        }
+    }
+
+    .text {
+        text-align: center;
+    }
+}
+
+@media (max-width: $mobile-m) {
+    .result {
+
+        &__img-block {
+            &::after, &::before {
+                width: 200px;
+            }
+        }
+        &__img {
+            width: 200px;
+        }
     }
 }

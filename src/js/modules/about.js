@@ -15,6 +15,32 @@ export default class About {
         return aboutSection.append(this.template);
     }
 
+    translate(object) {
+        const aboutTitle = document.querySelector('.about__title');
+        const vinylTitle = document.querySelector('.vinyl__title');
+        const vinylText = document.querySelector('.vinyl__text');
+        const optionsTitle = document.querySelector('.options__title');
+        const optionsText = document.querySelector('.options__text');
+        const styleTitle = document.querySelector('.style__title');
+        const styleText = document.querySelector('.style__text');
+        const resultTitle = document.querySelector('.result__title');
+        const resultText = document.querySelector('.result__text');
+        const prototypeTitle = document.querySelector('.prototype__title');
+        const prototypeText = document.querySelector('.prototype__text');
+
+        aboutTitle.innerHTML = object.titleAbout;
+        vinylTitle.innerHTML = object.titleVinyl;
+        vinylText.innerHTML = object.textVinyl;
+        optionsTitle.innerHTML = object.titleOptions;
+        optionsText.innerHTML = object.textOptions;
+        styleTitle.innerHTML = object.titleStyle;
+        styleText.innerHTML = object.textStyle;
+        resultTitle.innerHTML = object.titleResult;
+        resultText.innerHTML = object.textResult;
+        prototypeTitle.innerHTML = object.titlePrototype;
+        prototypeText.innerHTML = object.textPrototype;
+    }
+
     #template() {
         return createElement(
             `
@@ -57,7 +83,9 @@ export default class About {
                             <div class ="result__text-wrapper">
                                 <p class="result__text text">${this.object.textResult}</p>
                             </div>
-                            <img src="../../img/vinyl-result.jpg" alt="Vinyl record" class = "result__img">
+                            <div class ="result__img-block">
+                                <img src="../../img/vinyl-result.jpg" alt="Vinyl record" class = "result__img">
+                            </div>
                         </div>
                     </div>
                 </div>

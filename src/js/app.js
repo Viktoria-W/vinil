@@ -162,5 +162,19 @@ function stopSound() {
 
 
 import About from "./modules/about.js";
-import { aboutVinyl } from "./modules/about-object.js";
-new About(aboutVinyl);
+import { aboutVinylEn, aboutVinylRu } from "./modules/about-object.js";
+
+
+const buttonAbout = document.querySelector('.header__link');
+
+buttonAbout.addEventListener('click', () => {
+    const about = new About(aboutVinylEn);
+
+    document.getElementById('ru').addEventListener('click', () => {
+        about.translate(aboutVinylRu);
+    });
+
+    document.getElementById('en').addEventListener('click', () => {
+        about.translate(aboutVinylEn);
+    });
+}, { once: true });

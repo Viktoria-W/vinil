@@ -36,8 +36,8 @@ position: relative;
             position: absolute;
             top: -50px;
             left: 464px;
+            box-shadow: 10px 10px 8px 0px rgba(34, 60, 80, 0.2);
         }
-        
     }
 
     &__front-side {
@@ -48,6 +48,7 @@ position: relative;
             top: 100px;
             left: -135px;
             z-index: 1;
+            box-shadow: 5px 9px 8px 0px rgba(34, 60, 80, 0.2);
     }
 }
 
@@ -380,7 +381,7 @@ position: relative;
 }
 
 /*-----------------Медиа-запросы(стороны проигрователя)--------------------------------------------*/
-@media (max-width: $mobile-l) {
+@media (max-width: $mobile-xl) {
     .corpus {
         &__top-side {
             & span {
@@ -391,9 +392,9 @@ position: relative;
         &__right-side {
 
             & span {
-                width: 180px;
-                top: -32px;
-                left: 260px;
+                width: 220px;
+                top: -41px;
+                left: 265px;
             }
         }
 
@@ -511,7 +512,7 @@ position: relative;
     }
 }
 /*-----------------Медиа-запросы(Пластинка)--------------------------------------------*/
-@media (max-width: $mobile-l) {
+@media (max-width: $mobile-xl) {
     .record {
         &__body {
             top: -245px;
@@ -556,7 +557,7 @@ position: relative;
     }
 }
 /*-----------------Медиа-запросы(Держатель иглы)--------------------------------------------*/
-@media (max-width: $mobile-l) {
+@media (max-width: $mobile-xl) {
     .pickup {
         &__toggle {
             top: -110px;
