@@ -38,21 +38,22 @@
         }
 
         &:nth-child(3) {
-            margin-top: 55px;
+            margin-top: 30px;
             animation-delay: 0.6s;
         }
     }
 }
 
 .container {
-
     &__left {
+    max-width: 250px;
     position: absolute;
     top: 0;
     left: 20%;
     }
 
     &__right {
+    max-width: 250px;
     position: absolute;
     top: 0;
     left: 65%;
@@ -62,7 +63,6 @@
 .hidden {
     display: none;
 }
-
 
 .dance-scale {
     animation: dance-scale 0.3s ease infinite alternate;

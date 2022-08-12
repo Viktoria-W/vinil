@@ -1,5 +1,5 @@
 //функция проверки на web-p
-import * as flsFunctions from "./modules/functions.js";
+import * as flsFunctions from "./modules/is-webp.js";
 flsFunctions.isWebp();
 
 
@@ -8,15 +8,11 @@ import SoundList from "./modules/sound-list.js";
 
 
 //импорт списков песен
-import { arrayHipHopList } from "./modules/hip-hop-list.js";
-import { arrayPopList } from "./modules/pop-list.js";
-import { arrayRockList } from "./modules/rock-list.js";
+import { arrayHipHopList, arrayPopList, arrayRockList } from "./modules/sound-list-array.js";
 
 
 //импорт массивов песен
-import { audioHipHopArray } from "./modules/hip-hop-array.js";
-import { audioPopArray } from "./modules/pop-array.js";
-import { audioRockArray } from "./modules/rock-array.js";
+import { audioHipHopArray, audioPopArray, audioRockArray} from "./modules/sound-array.js";
 
 
 //импорт функции удаления списка песен
@@ -24,17 +20,15 @@ import removeSoundList from "./modules/remove-sound-list.js"
 
 
 //импорт функции воспроизведения
-import playSound from "./modules/function-play-sound.js";
+import playSound from "./modules/play-sound.js";
 
 
 //импорт функций нот
-import showNote from "./modules/note.js";
-import moveNote from "./modules/move-note.js";
-import stopNote from "./modules/stop-note.js";
+import { showNote, moveNote, stopNote } from "./modules/note.js";
 
-//импорт функции анимации пластинки
-import startRecordAnimation from "./modules/record-animation.js";
-import stopRecordAnimation from "./modules/stop-record-animation.js";
+
+//импорт функций анимации пластинки
+import { startRecordAnimation, stopRecordAnimation } from "./modules/record-animation.js";
 
 
 //кнопки Play и Stop
@@ -49,6 +43,7 @@ import showTypeOfRecord from "./modules/type-of-record.js";
 //импорт функции скрытия неактивной кнопки
 import hiddenInactiveButton from "./modules/hidden-inactive-button.js";
 
+
 //импорт функции удаления анимации активной песни
 import removeHilghlightSoundList from "./modules/remove-highlight-sound-list.js";
 
@@ -58,9 +53,16 @@ const buttonPop = document.getElementById('pop');
 const buttonHipHop = document.getElementById('hip-hop');
 const buttonRock = document.getElementById('rock');
 
+
 //колонки проигрывателя
 const speakers = document.querySelectorAll('.front-side__speakers');
 
+
+function stopSound() {
+    let player = document.getElementById('player');
+    player.pause();
+    removeHilghlightSoundList();
+};
 
 
 //воспроизведение по умолчанию (хип-хоп)
@@ -152,20 +154,14 @@ buttonRock.addEventListener('click', () => {
 
 
 
-
-
-function stopSound() {
-    let player = document.getElementById('player');
-    player.pause();
-    removeHilghlightSoundList();
-};
-
-
+// импорт класса About
 import About from "./modules/about.js";
 import { aboutVinylEn, aboutVinylRu } from "./modules/about-object.js";
 
 
+//кнопка "о проекте"
 const buttonAbout = document.querySelector('.header__link');
+
 
 buttonAbout.addEventListener('click', () => {
     const about = new About(aboutVinylEn);
