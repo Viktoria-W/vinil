@@ -38,7 +38,15 @@
 }
 
 
-@media (max-height: 700px) {
+@media (min-height: 600px) {
+	.main {
+		&__record-wrapper {
+			padding-bottom: 35%;
+		}
+	}
+}
+
+@media (max-height: 650px) {
 	.main {
 		&__record-wrapper {
 			padding-bottom: 35%;
