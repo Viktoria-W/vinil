@@ -45,7 +45,7 @@ export default class About {
         return createElement(
             `
             <div class="about__wrapper">
-                <div class = "about__title">${this.object.titleAbout}</div>
+                <div class = "about__title title">${this.object.titleAbout}</div>
                 <div class ="about__button-block">
                     <button type ="button" class ="about__button" id ="en">En</button>
                     <button type ="button" class ="about__button" id ="ru">Ru</button>

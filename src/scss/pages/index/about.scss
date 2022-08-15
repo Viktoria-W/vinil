@@ -11,8 +11,6 @@
 
     &__button {
         padding: 3px;
-        border: 2px solid #0b0c10;
-        border-radius: 5px;
         color: #45a29e;
         background-color: inherit;
 
@@ -31,36 +29,45 @@
     }
 
     &__title {
-        font-family: 'ReggaeOne','Lato', sans-serif;
-        font-weight: bold;
         font-size: 32px;
-        line-height: 115%;
-        text-align: center;
         color: #c5c6c7;
-        padding-bottom: 10px;
-        padding-top: 20px;
-        text-decoration: underline;
+        padding: 20px 25px 10px;
         background-color: #0b0c10;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     &__vinyl {
+        @extend %min-height;
+        background-color: #0b0c10;
     }
 
     &__options {
+        @extend %min-height;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 
     &__style {
+        @extend %min-height;
+        background-color:rgba(255, 255, 255, 0.9);
     }
 
     &__result {
+        @extend %min-height;
+        background-color: #0b0c10;
     }
 
     &__prototype {
+        @extend %min-height;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 }
-.vinyl {
-    background-color: #0b0c10;
 
+%min-height {
+    min-height: 200px;
+}
+
+.vinyl {
     &__container {
         padding: 30px 50px 70px;
         display: flex;
@@ -76,7 +83,7 @@
 
     &__text-container {
         padding-top: 15px;
-        max-width: 450px;
+        max-width: 550px;
     }
 
     &__text {
@@ -92,15 +99,10 @@
 }
 
 .options {
-    background-color: rgba(255, 255, 255, 0.9);
-    &__container {
-        min-height: 200px;
-    }
-
     &__title {
         color: #0b0c10;
         text-align: left;
-        padding: 20px;
+        margin: 20px;
     }
 
     &__text-container {
@@ -113,24 +115,18 @@
     }
 
     &__img-block {
-        background-image: url('../../../img/vinyl-record.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: url('../../../img/vinyl-record.jpg') top / cover no-repeat;
         max-width: inherit;
         height: 300px;
     }
 }
 
 .style {
-    background-color:rgba(255, 255, 255, 0.9);
-    &__container {
-        min-height: 200px;
-    }
-
     &__title {
         color: #0b0c10;
         text-align: right;
         padding: 30px 30px 0px;
+        margin-left: 70%;
     }
 
     &__text-wrapper {
@@ -145,24 +141,17 @@
     }
 
     &__img-block {
-        background-image: url('../../../img/records-style.jpg');
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background: url('../../../img/records-style.jpg') bottom / cover no-repeat;
         max-width: inherit;
         height: 420px;
     }
 }
 
 .result {
-    background-color: #0b0c10;
-
-    &__container {
-    }
-
     &__title {
         padding: 20px 10px;
         color: #45a29e;
+        margin: 0 auto;
     }
 
     &__text-container {
@@ -187,6 +176,7 @@
 
     &__img-block {
         order: -1;
+        align-self: center;
         margin: 20px;
         position: relative;
 
@@ -230,11 +220,6 @@
 }
 
 .prototype {
-    background-color: rgba(255, 255, 255, 0.9);
-    &__container {
-        min-height: 200px;
-    }
-
     &__title {
         color: #0b0c10;
         text-align: left;
@@ -247,6 +232,7 @@
     }
 
     &__text {
+        padding: 10px;
     }
 }
 
@@ -255,39 +241,50 @@
         &__button {
             font-size: 20px;
         }
-    }
-    .result {
 
+        &__title {
+            font-size: 18px;
+        }
+    }
+
+    .result {
         &__img-block {
             &::after, &::before {
                 width: 250px;
             }
         }
+
         &__img {
             width: 250px;
         }
     }
 
+    %text-align{
+        text-align: center;
+    }
+
     .options {
         &__title {
-            text-align: center;
+            @extend %text-align;
         }
     }
 
     .style {
         &__title {
-            text-align: center;
+            @extend %text-align;
+            margin-left: 0;
         }
     }
 
     .prototype {
         &__title {
-            text-align: center;
+            @extend %text-align;
         }
     }
 
     .text {
-        text-align: center;
+        @extend %text-align;
+        font-size: 14px;
     }
 }
 

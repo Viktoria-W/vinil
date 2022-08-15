@@ -1,5 +1,5 @@
 import removeHilghlightSoundList from "./remove-highlight-sound-list.js";
-import stopRecordAnimation from "./stop-record-animation.js";
+import stopRecordAnimation from "./record-animation.js";
 
 export default function playSound(array) {
     let player = document.getElementById('player');

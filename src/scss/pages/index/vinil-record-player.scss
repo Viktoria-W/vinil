@@ -1,17 +1,4 @@
 /*-----------------Корпус--------------------------------------------*/
-.vinil-record-player {
-
-    &__corpus {
-    }
-
-    &__record {
-        position: relative;
-    }
-
-    &__pickup {
-    }
-}
-
 .corpus {
 position: relative;
     &__top-side {
@@ -26,7 +13,6 @@ position: relative;
 
     &__right-side {
         position: relative;
-
         & span {
             display: block;
             width: 273px;
@@ -53,7 +39,6 @@ position: relative;
 }
 
 .front-side {
-
     &__speakers {
         position: absolute;
         top: 0;
@@ -63,7 +48,6 @@ position: relative;
         background-color: #000;
         border-radius: 10px;
         z-index: 2;
-        
 
         &::after, &::before {
             content: '';
@@ -139,7 +123,6 @@ position: relative;
 }
 
 .nav {
-
     &__button-block {
         width: 200px;
         height: 50px;
@@ -160,9 +143,6 @@ position: relative;
         left: 170px;
         border-radius: 50%;
     }
-}
-
-.button-block {
 }
 
 .button {
@@ -239,6 +219,7 @@ position: relative;
 
 /*-------------------Пластинка------------------------------------------*/
 .record {
+    position: relative;
 
     &__body {
         content: '';
@@ -266,7 +247,6 @@ position: relative;
 }
 
 .profile {
-
     &__stripes {
         content: '';
         top: 0;
@@ -374,7 +354,7 @@ position: relative;
         position: absolute;
         width: 20px;
         height: 35px;
-        background-color: #A5A5A5;
+        background-color: #c5c6c7;
         border-radius: 10%;
         transform: rotate(70deg) skewY(131deg);
     }
@@ -390,7 +370,6 @@ position: relative;
         }
 
         &__right-side {
-
             & span {
                 width: 220px;
                 top: -41px;
@@ -533,9 +512,6 @@ position: relative;
     .profile {
         &__stripes {
             width: 70px;
-
-            &::after {
-            }
         }
 
         &__stripes-top {
