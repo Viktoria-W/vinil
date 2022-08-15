@@ -1336,7 +1336,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px;
 }
 .options__img-block {
-  background: url("../../../img/vinyl-record.jpg") top/cover no-repeat;
+  background: url("../img/vinyl-record.jpg") top/cover no-repeat;
   max-width: inherit;
   height: 300px;
 }
@@ -1357,7 +1357,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 30px;
 }
 .style__img-block {
-  background: url("../../../img/records-style.jpg") bottom/cover no-repeat;
+  background: url("../img/records-style.jpg") bottom/cover no-repeat;
   max-width: inherit;
   height: 420px;
 }
@@ -1401,13 +1401,13 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 2px 2px 5px rgba(197, 198, 199, 0.2);
 }
 .result__img-block::before {
-  background: #45a29e url("../../../img/vinyl-record.jpg") center/cover no-repeat;
+  background: #45a29e url("../img/vinyl-record.jpg") center/cover no-repeat;
   top: -5px;
   left: -20px;
   transform: rotate(-8deg);
 }
 .result__img-block::after {
-  background: #45a29e url("../../../img/records-style.jpg") center/cover no-repeat;
+  background: #45a29e url("../img/records-style.jpg") center/cover no-repeat;
   top: 5px;
   left: 10px;
   transform: rotate(8deg);
